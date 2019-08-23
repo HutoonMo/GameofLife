@@ -1,0 +1,10 @@
+.Grid {
+    position: relative;
+    margin: 0 auto;
+    background-color: #000;
+    background-image: linear-gradient(rgb(17, 240, 47) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(17, 240, 47) 1px, transparent 1px);
+    border-width: 6.5px;
+    border-style: solid;
+    border-color: red green blue yellow;
+}
