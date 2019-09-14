@@ -8,3 +8,22 @@
     border-style: solid;
     border-color: red green blue yellow;
 }
+.Board{
+    text-align: center;
+    margin:"auto";
+    height: "auto";
+    width:"500px";
+    border:"3px solid ";
+    border-color: red blue green yellow;
+    table-layout:'fixed';
+}
+.Cell {
+    background: #ccc;
+    position: absolute;
+border-width: 1px;
+border-style: solid;
+border-color: red 
+}
+.success{
+    color: #000;
+}
