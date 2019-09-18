@@ -8,7 +8,7 @@ const CELL_SIZE = 24;
 const WIDTH = 500;
 const HEIGHT = 400;
 const ROWS = 20;
-const COLS =  20;
+const COLS = 20;
 export class Game extends React.Component {
   constructor(props) {
     super(props);
@@ -38,10 +38,11 @@ export class Game extends React.Component {
     if (this.state.board[x][y] === 0) {
       //1 represents that the cell is full
       tempBoard[x][y] = 1;
-    }else{ //if cell is full, empty it
+    } else {
+      //if cell is full, empty it
       tempBoard[x][y] = 0;
     }
-    
+
     this.setState({ board: tempBoard });
   }
   playButton = () => {
@@ -56,7 +57,7 @@ export class Game extends React.Component {
     const currentBoard = this.state.board;
     //get deep copy of the board as it is the next state of the board, to make updates on it not the original
     var currentBoard2 = JSON.parse(JSON.stringify(this.state.board));
-// loop through each cell and get its nighbors count and check against the rules of game of life.
+    // loop through each cell and get its nighbors count and check against the rules of game of life.
     for (let x = 0; x < ROWS; x++) {
       for (let y = 0; y < COLS; y++) {
         let cell = currentBoard2[x][y];
@@ -75,7 +76,6 @@ export class Game extends React.Component {
       board: currentBoard2,
       generations: this.state.generations + 1
     });
- 
   }
   countNeighbors(board, x, y) {
     let total = 0;
@@ -103,7 +103,6 @@ export class Game extends React.Component {
     const b = this.state.board;
     const board = b.map((row, i) => {
       return (
-
         <tr key={"row_" + i}>
           {row.map((col, j) => {
             const color = b[i][j] !== 0 ? "white" : "black";
@@ -116,20 +115,14 @@ export class Game extends React.Component {
               />
             );
           })}
-         
         </tr>
-        
-
       );
     });
     return (
       <div>
         <table style={Boardstyle} cellSpacing="0">
-          <tbody>{board}
-         
-          </tbody>
+          <tbody>{board}</tbody>
           {console.log(this.state.board)}
-          
         </table>
         <h7 id="h7"> Generation:{this.state.generations} </h7>
         <Button
@@ -137,7 +130,6 @@ export class Game extends React.Component {
           start={this.playButton}
           pause={this.pauseButton}
         />
-       
       </div>
     );
   }
